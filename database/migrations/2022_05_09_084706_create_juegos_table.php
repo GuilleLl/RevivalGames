@@ -17,7 +17,7 @@ class CreateJuegosTable extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('Genero');
-            $table->string('Descripcion');
+            $table->text('Descripcion');
             $table->string('Fecha_salida');
             $table->string('Imagen');
             $table->timestamps();

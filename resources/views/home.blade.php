@@ -18,7 +18,7 @@
 
             <div class="w-full p-6">
                 <p class="text-gray-700">
-                    You are logged in!
+                    edita esto
                 </p>
             </div>
         </section>

@@ -12,6 +12,8 @@ class Reseñas extends Model
     protected $fillable = [
         'Descripcion_Reseña',
         'Valoracion',
+        'id_juegos',
+        'id_usuario'
     ];
     public function juegos(){
         return $this->belongsTo(Juegos::class)->withTimestamps();
