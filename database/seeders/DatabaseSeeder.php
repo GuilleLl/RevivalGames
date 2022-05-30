@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $usuario->assignRole('admin');
         
-        \App\Models\User::factory(9)->create();
+        \App\Models\User::factory(24)->create();
         $this->seedRelationRolesUser();
     }
 

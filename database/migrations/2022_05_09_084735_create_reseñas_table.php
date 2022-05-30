@@ -15,7 +15,7 @@ class CreateReseñasTable extends Migration
     {
         Schema::create('reseñas', function (Blueprint $table) {
             $table->id();
-            $table->string('Descripcion_Reseña');
+            $table->text('Descripcion_Reseña');
             $table->integer('Valoracion');
             $table->timestamps();
             $table->foreignId('id_juegos')

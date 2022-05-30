@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\JuegosController;
+use App\Http\Controllers\Admin\ReseñasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
