@@ -1,8 +1,8 @@
 @extends('adminlte::page')
-
+<link rel="icon" href="{{ asset('Logo.ico') }}">
 @section("content")
 
-<h1 class="text-center">{{ __("Listado de usuarios") }}</h1>
+<h1 class="text-center">{{ __("Listado de Usuarios") }}</h1>
 
 <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
     <thead>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReseñasTable extends Migration
+class CreatecriticasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateReseñasTable extends Migration
      */
     public function up()
     {
-        Schema::create('reseñas', function (Blueprint $table) {
+        Schema::create('criticas', function (Blueprint $table) {
             $table->id();
-            $table->text('Descripcion_Reseña');
+            $table->text('Descripcion_critica');
             $table->integer('Valoracion');
             $table->timestamps();
             $table->foreignId('id_juegos')
                   ->constrained('juegos')
-                  ->cascadeOnUpdate();
+                  ->onDelete('cascade');
                   
             $table->foreignId('id_usuario')
                   ->constrained('users')
-                  ->cascadeOnUpdate();
+                  ->onDelete('cascade');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateReseñasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reseñas');
+        Schema::dropIfExists('criticas');
     }
 }

@@ -18,7 +18,7 @@ class JuegosSeeder extends Seeder
         $data=[
             [
                 'Nombre'=>"God of War",
-                'Genero'=>"Acción",
+                'Genero'=>"Accion",
                 'Descripcion'=>"God of War es la vuelta de Kratos a una nueva entrega con un nuevo comienzo para el personaje y una ambientación nórdica, ofreciéndonos una perspectiva más madura y realista de la mitología de dioses y monstruos milenarios habitual en la serie de títulos.",
                 'Fecha_salida'=>"2018-04-20",
                 'Imagen'=>"Godofwar.jpg"
@@ -32,7 +32,7 @@ class JuegosSeeder extends Seeder
             ],
             [
                 'Nombre'=>"Sekiro: Shadows Die Twice",
-                'Genero'=>"Acción",
+                'Genero'=>"Accion",
                 'Descripcion'=>"Está ambientado en un Japón del periodo Sengoku a finales del siglo XVI. Su protagonista es un shinobi que fue dado por muerto después de que su señor fuera secuestrado y su brazo cercenado por un líder samurái del Clan Ashina.",
                 'Fecha_salida'=>"2019-03-22",
                 'Imagen'=>"Sekiro.jpg"
@@ -60,7 +60,7 @@ class JuegosSeeder extends Seeder
             ],
             [
                 'Nombre'=>"Escape from Tarkov",
-                'Genero'=>"Acción",
+                'Genero'=>"Accion",
                 'Descripcion'=>"Es un videojuego de acción bélica multijugador en primera persona para PC desarrollado por Developer Battlestate Games que nos trasladará a la abandonada ciudad de Tarkov, en Rusia, en una lucha sin cuartel entre facciones, guerrillas locales y otros enemigos.",
                 'Fecha_salida'=>"2017-07-27",
                 'Imagen'=>"EscapeFromTarkov.jpg"
@@ -95,7 +95,7 @@ class JuegosSeeder extends Seeder
             ],
             [
                 'Nombre'=>"Counter-Strike: Global Offensive",
-                'Genero'=>"Acción",
+                'Genero'=>"Accion",
                 'Descripcion'=>"Es un videojuego de acción shooter en primera persona. Cuarta entrega de la saga de Valve, CSGO repite el planteamiento de siempre: dos equipos, terroristas y antiterroristas, luchando entre sí por cumplir objetivos como plantar/ desactivar una bomba. ",
                 'Fecha_salida'=>"2012-08-21",
                 'Imagen'=>"CSGO.jpg"

@@ -30,8 +30,8 @@ return [
     |
     */
 
-    'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_ico_only' => true,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -172,7 +172,7 @@ return [
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_scrollbar_theme' => 'os-theme-dark',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -230,6 +230,12 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        [   
+            'text' => '',
+            'icon' => 'fas fa-fw fa-home',
+            'topnav_right' => true,
+            'url'  => 'http://revivalgames.test/',
+        ],
 
 
         
@@ -244,8 +250,8 @@ return [
             'icon' => 'fas fa-fw fa-gamepad',
         ],
         [
-            'text' => 'Reseñas',
-            'url'  => 'admin/reseñas',
+            'text' => 'Criticas',
+            'url'  => 'admin/criticas',
             'icon' => 'fas fa-fw fa-comment',
         ]
 

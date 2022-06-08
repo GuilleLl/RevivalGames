@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Criticas;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Juegos extends Model
 {
@@ -16,7 +17,9 @@ class Juegos extends Model
             'Fecha_salida',
             'Imagen',
     ];
-    public function reseñas(){
-        return $this->hasMany(Reseñas::class)->withTimestamps();
+    public function criticas(){
+        return $this->hasMany(Criticas::class)->withTimestamps();;
     }
+
+
 }

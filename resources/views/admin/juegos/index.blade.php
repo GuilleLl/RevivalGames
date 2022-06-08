@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-
+<link rel="icon" href="{{ asset('Logo.ico') }}">
 @section("content")
 
         <div class="text-center">
@@ -9,26 +9,29 @@
             <button class="btn btn-success btn-lg">{{ __("Añadir Juego") }}</button>
             </a>
         </div>
-    
 
     <table class="border-separate border-2 text-center border-gray-500 mt-3" style="width: 100%">
         <thead>
         <tr>
+            <th class="px-2 py-2">{{ __("Id") }}</th>
             <th class="px-2 py-2">{{ __("Nombre") }}</th>
             <th class="px-2 py-2">{{ __("Descripcion") }}</th>
             <th class="px-2 py-2">{{ __("Genero") }}</th>
             <th class="px-5 py-2">{{ __("Fecha_Salida") }}</th>
             <th class="px-2 py-2">{{ __("Imagen") }}</th>
+            <th class="px-2 py-2">{{ __("foto") }}</th>
         </tr>
         </thead>
         <tbody>
             @forelse($juegos as $juego)
                 <tr>
+                    
+                        <td class="border px-1 py-2">{{ $juego->id }}</td>
                     <td class="border px-1 py-2">{{ $juego->Nombre }}</td>
                     <td class="border px-1 py-2">{{ $juego->Descripcion }}</td>
                     <td class="border px-1 py-2">{{ $juego->Genero }}</td>
                     <td class="border px-1 py-2">{{ $juego->Fecha_salida }}</td>
-                    <td class="border px-1 py-2">{{ $juego->Imagen }}</td>
+                    <td class="border px-1 py-2"><img class="border "  width="172" height="229" src="/images/{{$juego->Imagen}}"></td>
                     <td class="border px-1 py-2">
                         <a href="{{ route('juegos.edit', ['juego' => $juego]) }}"><button class="btn btn-primary btn-sm px-3">{{ __("Editar") }}</button></a>
                         <a
@@ -43,6 +46,8 @@
                             @csrf
                         </form>
                     </td>
+                     
+                    
                 </tr>
             @empty
                 <tr>

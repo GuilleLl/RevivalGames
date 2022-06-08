@@ -20,5 +20,8 @@ class RoleSeeder extends Seeder
         $role3=Role::create(['name' => 'free']);
 
         Permission::create(['name'=>'adminAccess']) ->syncRoles([$role1]);
+        Permission::create(['name'=>'userAccess']) ->syncRoles([$role1,$role2,$role3]);
+        Permission::create(['name'=>'userPaypal']) ->syncRoles([$role3]);
+        Permission::create(['name'=>'userPremium']) ->syncRoles([$role1,$role2]);
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class JuegosController extends Controller
+class AdminJuegosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class JuegosController extends Controller
      */
     public function index()
     {
-        $juegos = Juegos::paginate(10);
+        $juegos = Juegos::paginate(4);
         return view("admin.juegos.index", compact("juegos"));
     }
 
@@ -48,7 +48,7 @@ class JuegosController extends Controller
             "Genero" => "required|string",
             "Descripcion" => "required|string",
             "Fecha_salida" => "required|string",
-            // "Imagen"=> "required|image|mimes:jpg,gif,png,jpeg|"
+            "Imagen"=> "required|image|mimes:jpg,gif,png,jpeg|"
            
         ]);
         Juegos::create([
@@ -56,10 +56,9 @@ class JuegosController extends Controller
             "Genero" => $request->input("Genero"),
             "Descripcion" => $request->input("Descripcion"),
             "Fecha_salida" => $request->input("Fecha_salida"),
-            // 'Imagen'=>$request->file("Imagen")->store('','images'),
+            'Imagen'=>$request->file("Imagen")->store('','images'),
         ]);
-        return redirect(url("admin/juegos"))
-        ->with("success", __("Juego añadido"));
+        return redirect(url("admin/juegos"));
     }
 
 
@@ -108,7 +107,7 @@ class JuegosController extends Controller
             "Genero" => "required|string",
             "Descripcion" => "required|string",
             "Fecha_salida" => "required|string",
-            // "Imagen"=> "required|image|mimes:jpg,gif,png,jpeg|"
+            "Imagen"=> "image|mimes:jpg,gif,png,jpeg|"
            
         ]);
 
@@ -118,14 +117,14 @@ class JuegosController extends Controller
         $juego-> Genero = $request->get('Genero');
         $juego-> Descripcion = $request->get('Descripcion');
         $juego-> Fecha_salida = $request->get('Fecha_salida');
-        // if($request->hasFile('Imagen')){
-        //      Storage::disk('images')->delete('images/'.$juego->Imagen);
-        //      $juego-> Imagen=$request->file("Imagen")->store('','images');
-        // }
+        if($request->hasFile('Imagen')){
+                Storage::disk('images')->delete('images/'.$juego->Imagen);
+                $juego->Imagen = $request->file('Imagen')->store('','images');
+            }
+        
 
         $juego-> save();
-        return redirect(url("admin/juegos"))
-        ->with("success", __("Juego actualizado!"));
+        return redirect(url("admin/juegos"));
     }
     /**
      * Remove the specified resource from storage.
@@ -136,7 +135,7 @@ class JuegosController extends Controller
     public function destroy(Juegos $juego)
     {
         $juego->delete();
-        return back()->with("success", __("¡Juego eliminado!"));
+        return back();
     }
 
     public function _construct()
