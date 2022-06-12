@@ -18,10 +18,10 @@ class Criticas extends Model
         'id_usuario'
     ];
     public function juegos(){
-        return $this->belongsTo(Juegos::class)->withTimestamps();;
+        return $this->belongsTo(Juegos::class);
     }
-    public function users(){
-        return $this->belongsTo(User::class)->withTimestamps();;
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 }

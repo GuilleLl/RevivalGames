@@ -20,16 +20,23 @@ class CriticasController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        
         $criticas = Criticas::all();
         $criticasMostrar = [];
-        foreach ($criticas as $critica) {
-            if ($critica->id_usuario == $id) {
-                array_push($criticasMostrar, $critica);
+        $notfound = false;
+        if(count($criticas)>0){
+            
+            foreach ($criticas as $critica) {
+                if ($critica->id_usuario == $id) {
+                    array_push($criticasMostrar, $critica);
+                }
             }
+    
+            
+        }else{
+            $notfound = true;
+            
         }
-
-        return view("criticas.index", compact("critica", "criticasMostrar"));
+        return view("criticas.index", compact("criticasMostrar","notfound"));
     }
 
     public function createCritica($idJuego)

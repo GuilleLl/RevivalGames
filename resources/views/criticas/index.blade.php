@@ -20,7 +20,16 @@
         </thead>
 
         <tbody class="">
-
+            @if($notfound)
+            <tr>
+                <td colspan="12">
+                    <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
+                        <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
+                        <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
+                    </div>
+                </td>
+            </tr>
+            @else
             @forelse($criticasMostrar as $critica)
 
             <tr>
@@ -44,7 +53,7 @@
             </tr>
 
             @endforelse
-
+            @endif
         </tbody>
     </table>
 
