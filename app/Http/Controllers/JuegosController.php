@@ -10,7 +10,7 @@ class JuegosController extends Controller
 {
     public function mostrarJuegos()
     {
-        $juegos = Juegos::paginate(10);
+        $juegos = Juegos::paginate(9);
         return view("juegos.index", compact("juegos"));
     }
 

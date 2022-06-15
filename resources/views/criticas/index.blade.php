@@ -9,51 +9,47 @@
 
 
 <tbody>
-    <table class="border-separate border-2 text-center border-gray-500 mt-3 p-5" style="width: 100%">
+    <table class="border-separate border-2 text-center border-gray-500 p-5" style="width: 100%">
 
-        <thead>
-            <tr>
-                <th scope="col">{{ ("Id_juego") }}</th>
-                <th scope="col">{{ ("Descripcion Critica") }}</th>
-                <th scope="col">{{ ("Valoracion") }}</th>
-            </tr>
-        </thead>
+
 
         <tbody class="">
-            @if($notfound)
-            <tr>
-                <td colspan="12">
-                    <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
-                        <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
-                        <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
+            <div class="row d-flex justify-content-center">
+                @if($notfound)
+                <tr>
+                    <td colspan="12">
+                        <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
+                            <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
+                            <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
+                        </div>
+                    </td>
+                </tr>
+                @else
+                @forelse($criticasMostrar as $critica)
+
+
+                <div class="card row flex-row p-2 bg-dark text-white d-flex align-items-center col-8 my-5 text-center">
+                    <div class="col-lg-2">
+                        <h1 class="valoracion">{{ $critica->Valoracion }}</h1>
                     </div>
-                </td>
-            </tr>
-            @else
-            @forelse($criticasMostrar as $critica)
-
-            <tr>
-            
-                <td class="border px-4 py-2">{{ $critica->id_juegos }}</td>
-
-                <td class="border px-4 py-2">{{ $critica->Descripcion_critica }}</td>
-
-                <td class="border px-4 py-2">{{ $critica->Valoracion }}</td>
-
-
-            </tr>
-            @empty
-            <tr>
-                <td colspan="12">
-                    <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
-                        <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
-                        <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
+                    <div class="col-lg-10">
+                        <h4 class="pb-0">{{ $critica->id_juegos }}</h4>
+                        <p>{{ $critica->Descripcion_critica }}</p>
                     </div>
-                </td>
-            </tr>
+                </div>
+                @empty
+                <tr>
+                    <td colspan="12">
+                        <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
+                            <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
+                            <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
+                        </div>
+                    </td>
+                </tr>
 
-            @endforelse
-            @endif
+                @endforelse
+                @endif
+            </div>
         </tbody>
     </table>
 

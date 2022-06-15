@@ -1,9 +1,29 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 
-  footer {
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
 
-    position: absolute;
-    bottom: 0;
-    width: 1000%;
-    height: 600px;
-    color: white;
-  }
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 101.5%;
+}
+
+header a:hover,footer  a:hover {
+  transform: scale(1.2);
+  color:orange;
+}
+
+.sombra{
+box-shadow: 0px 10px 13px -7px #000000, 7px 6px 8px -3px rgba(255,173,25,0.7);
+}
+
+.valoracion{
+  border: 2px solid orange;
+  border-radius: 30px;
+}

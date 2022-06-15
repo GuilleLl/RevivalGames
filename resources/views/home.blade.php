@@ -12,7 +12,7 @@
 
         <section class="flex flex-col break-words text-center py-5">
             <h1>Juegos mas populares</h1>
-            <div class="carousel slide carousel-fade " id="mi-carousel" data-bs-ride="carousel">
+            <div class="carousel slide carousel-fade container" id="mi-carousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block w-100 img-fluid " src="/images/carrusel/carrusel1.jpg" alt="">

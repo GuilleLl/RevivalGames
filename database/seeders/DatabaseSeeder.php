@@ -17,15 +17,32 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
 
-        $usuario = User::create([
+        $usuarioAdmin = User::create([
             'name' => 'Guille',
             'email' => 'guillermola40@educastur.es',
             'email_verified_at' => now(),
-            'password' => Hash::make('guille')
+            'password' => Hash::make('admin')
         ]);
-        $usuario->assignRole('admin');
+        $usuarioAdmin->assignRole('admin');
         
-        \App\Models\User::factory(24)->create();
+        $usuarioPremium = User::create([
+            'name' => 'Premium',
+            'email' => 'premium@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('premium')
+        ]);
+
+        $usuarioPremium->assignRole('premium');
+
+        User::create([
+            'name' => 'Free',
+            'email' => 'free@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('free')
+        ]);
+
+
+        \App\Models\User::factory(22)->create();
         $this->seedRelationRolesUser();
     }
 
@@ -33,7 +50,7 @@ class DatabaseSeeder extends Seeder
     {
         $users = \App\Models\User::all();
         foreach ($users as $user) {
-            if ($user!=\App\Models\User::find(1)) {
+            if ($user!=\App\Models\User::find(1)&&$user!=\App\Models\User::find(2)) {
                 $user->assignRole('free');
             }
         }
