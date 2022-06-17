@@ -28,14 +28,21 @@
                 @forelse($criticasMostrar as $critica)
 
 
-                <div class="card row flex-row p-2 bg-dark text-white d-flex align-items-center col-8 my-5 text-center">
-                    <div class="col-lg-2">
-                        <h1 class="valoracion">{{ $critica->Valoracion }}</h1>
+                <div class="card row flex-row p-2 bg-dark text-white col-8 my-5 text-center d-flex align-items-center d-flex justify-content-center">
+                    <div class="d-flex justify-content-center col-lg-3 m-2">
+                        <img class="" src="/images/{{$critica->juegos->Imagen}}" alt="">
                     </div>
-                    <div class="col-lg-10">
-                        <h4 class="pb-0">{{ $critica->id_juegos }}</h4>
-                        <p>{{ $critica->Descripcion_critica }}</p>
+                    <div class="row col-9 d-flex justify-content-center">
+
+                        <div class="col-lg-12">
+                            <h4 class="pb-0">{{ $critica->juegos->Nombre }}</h4>
+                            <p>{{ $critica->Descripcion_critica }}</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <h1 class="valoracion">{{ $critica->Valoracion }}</h1>
+                        </div>
                     </div>
+
                 </div>
                 @empty
                 <tr>

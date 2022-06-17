@@ -41,7 +41,7 @@
                                 <h1 class="valoracion">{{ $critica->Valoracion }}</h1>
                             </div>
                             <div class="col-lg-10">
-                                <h4 class="pb-0">{{ $critica->id_usuario}}</h4>
+                                <h4 class="pb-0">{{ $critica->users->name}}</h4>
                                 <p>{{ $critica->Descripcion_critica }}</p>
                             </div>
                         </div>
