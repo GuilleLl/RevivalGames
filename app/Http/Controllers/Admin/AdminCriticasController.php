@@ -21,6 +21,6 @@ class AdminCriticasController extends Controller
     {
         $critica=Criticas::find($id);
         $critica->delete();
-        return back();
+        return back()->withErrors(['', 'msg']);
     }
 }

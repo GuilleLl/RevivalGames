@@ -18,7 +18,7 @@ class Juegos extends Model
             'Imagen',
     ];
     public function criticas(){
-        return $this->hasMany(Criticas::class,'id_juegos');
+        return $this->hasMany(Criticas::class,'id');
     }
 
 

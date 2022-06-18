@@ -45,7 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function criticas(){
-        return $this->hasMany(Criticas::class,'id_usuario');
+        return $this->hasMany(Criticas::class,'id');
     }
     public function adminlte_image(){
         return 'https://picsum.photos/300/300';

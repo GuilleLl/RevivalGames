@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $user=User::find($id);
         $user->delete();
-        return back();
+        return back()->withErrors(['', 'msg']);
     }
 }
 

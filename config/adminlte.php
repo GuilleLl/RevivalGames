@@ -234,7 +234,7 @@ return [
             'text' => '',
             'icon' => 'fas fa-fw fa-home',
             'topnav_right' => true,
-            'url'  => 'http://revivalgames.test/',
+            'url'  => 'http://ec2-50-17-44-223.compute-1.amazonaws.com/',
         ],
 
 

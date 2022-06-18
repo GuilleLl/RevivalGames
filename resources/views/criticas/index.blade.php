@@ -28,7 +28,7 @@
                 @forelse($criticasMostrar as $critica)
 
 
-                <div class="card row flex-row p-2 bg-dark text-white col-8 my-5 text-center d-flex align-items-center d-flex justify-content-center">
+                <div class="card row flex-row p-2 bg-dark text-white col-8 my-5 text-center d-flex align-items-center d-flex justify-content-center sombra">
                     <div class="d-flex justify-content-center col-lg-3 m-2">
                         <img class="" src="/images/{{$critica->juegos->Imagen}}" alt="">
                     </div>

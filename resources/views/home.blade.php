@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="sm:container sm:mx-auto sm:mt-10">
-    <div class="w-full sm:px-6">
+    <div class="w-full sm:px-6 mb-5 pb-5">
 
         @if (session('status'))
         <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
@@ -10,7 +10,7 @@
         </div>
         @endif
 
-        <section class="flex flex-col break-words text-center py-5">
+        <section class="flex flex-col break-words text-center py-5 sticky">
             <h1>Juegos mas populares</h1>
             <div class="carousel slide carousel-fade container" id="mi-carousel" data-bs-ride="carousel">
                 <div class="carousel-inner">

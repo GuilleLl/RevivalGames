@@ -58,7 +58,7 @@ class AdminJuegosController extends Controller
             "Fecha_salida" => $request->input("Fecha_salida"),
             'Imagen'=>$request->file("Imagen")->store('','images'),
         ]);
-        return redirect(url("admin/juegos"));
+        return redirect(url("admin/juegos"))->withErrors(['', 'msg']);
     }
 
 
@@ -124,7 +124,7 @@ class AdminJuegosController extends Controller
         
 
         $juego-> save();
-        return redirect(url("admin/juegos"));
+        return redirect(url("admin/juegos"))->withErrors(['', 'msg']);
     }
     /**
      * Remove the specified resource from storage.
@@ -135,7 +135,7 @@ class AdminJuegosController extends Controller
     public function destroy(Juegos $juego)
     {
         $juego->delete();
-        return back();
+        return back()->withErrors(['', 'msg']);
     }
 
     public function _construct()

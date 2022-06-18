@@ -33,7 +33,7 @@
             @endforelse
 
         </div>
-        <div class="d-flex justify-content-center pb-5">
+        <div class="d-flex justify-content-center pb-5 pagination">
             {{ $juegos->links() }}
         </div>
 

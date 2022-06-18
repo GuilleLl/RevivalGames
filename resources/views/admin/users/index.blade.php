@@ -14,6 +14,11 @@
         </tr>
     </thead>
     <tbody>
+        @if($errors->any())
+        <script language="javascript">
+            alert("Se ha eliminado el usuario")
+        </script>
+        @endif
         @forelse($users as $user)
         <tr>
 
@@ -30,9 +35,9 @@
                         )
                         }}
             </td>
-           
+
             <td class="border px-4 py-2">
-            @if(!$user->can('adminAccess'))
+                @if(!$user->can('adminAccess'))
                 <a href="#" class="text-red-400" onclick="event.preventDefault();
                                 document.getElementById('delete-user-{{ $user->id }}-form').submit();"><button class="btn btn-danger btn-sm">{{ __("Eliminar") }}</button>
                 </a>
@@ -40,7 +45,7 @@
                     @method("DELETE")
                     @csrf
                 </form>
-            @endif
+                @endif
             </td>
 
         </tr>
@@ -59,10 +64,10 @@
 
 
 
-        <div class="mt-3">
-            {{ $users->links() }}
-           
-        </div>
+<div class="mt-3">
+    {{ $users->links() }}
+
+</div>
 
 
 @endsection
