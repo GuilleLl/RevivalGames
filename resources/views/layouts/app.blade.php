@@ -31,7 +31,7 @@
 </head>
 
 <body class="bg-secondary italic ">
-    <div id="app">
+  
         <header class="bg-dark">
 
 
@@ -94,7 +94,7 @@
 
         </header>
 
-    </div>
+
 
 
     @yield('content')
@@ -115,3 +115,4 @@
 </body>
 
 </html>
+

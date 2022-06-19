@@ -1,15 +1,15 @@
 @extends("layouts.app")
 
 @section("content")
-<div class="flex justify-center flex-wrap p-4 mt-5">
+<div class="flex justify-center flex-wrap">
     <div class="text-center">
-        <h1 class="mb-5">{{ __("Mis Criticas") }}</h1>
+        <h1>{{ __("Mis Criticas") }}</h1>
     </div>
 </div>
 
 
 <tbody>
-    <table class="border-separate border-2 text-center border-gray-500 p-5" style="width: 100%">
+    <table class="border-separate border-2 text-center border-gray-500 p-5 mb-5" style="width: 100%">
 
 
 

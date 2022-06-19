@@ -12,8 +12,11 @@ footer {
   position: absolute;
   bottom: 0;
   width: 101.5%;
-}
 
+}
+header{
+  width: 100%;
+}
 header a:hover,footer  a:hover {
   transform: scale(1.2);
   color:orange;

@@ -19,7 +19,7 @@
         <div class="text-center col-12 py-5">
 
 
-            <table class=" text-center mt-3  bg-dark" style="width: 100%">
+            <table class=" text-center mt-3  mb-5 bg-dark" style="width: 100%">
 
                 @if (Auth::user()->can('userPremium'))
                 <a href="{{url('criticas/create',$juego->id)}}">
@@ -48,7 +48,7 @@
                         @empty
                         <tr>
                             <td colspan="12">
-                                <div class="bg-white text-center border  px-4 py-3 rounded relative" role="alert">
+                                <div class="bg-white text-center border  px-4 py-3  rounded relative" role="alert">
                                     <p><strong class="font-bold">{{ __("No hay criticas") }}</strong></p>
                                     <span class="block sm:inline">{{ __("Todavía no hay nada que mostrar aquí") }}</span>
                                 </div>

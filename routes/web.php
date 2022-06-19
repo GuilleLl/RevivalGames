@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JuegosController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PremiumController;
+use App\Http\Controllers\ContactaController;
 use App\Http\Controllers\CriticasController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
@@ -43,6 +44,9 @@ Route::group(['middleware' => ['can:userAccess']], function () {
 
     //listado de un juego con sus criticas
     Route::get('juegos/{id}', [JuegosController::class, 'mostrarJuego']);
+
+    Route::get('contacta',[ContactaController::class,'index'])->name('contacta.index');
+    Route::post('contacta',[ContactaController::class,'store'])->name('contacta.store');
 
 });
 
