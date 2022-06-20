@@ -31,68 +31,68 @@
 </head>
 
 <body class="bg-secondary italic ">
-  
-        <header class="bg-dark">
+
+    <header class="bg-dark">
 
 
-            <nav class="navbar navbar-expand-lg navbar-dark  d-flex justify-content-center container  flex justify-between mx-auto text-center row">
-                <a href="{{ url('/home') }}" class=" font-semibold text-gray-100 no-underline hover:text-orange-500  nav-item col-md-12 col-lg-2 d-flex justify-content-center  p-0">
-                    <img src="{{ asset('Logo.png') }}" style="width:100px;height:100px;">
-                </a>
-                <button class="navbar-toggler col-2 " type="button" data-toggle="collapse" data-target="#opciones">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
+        <nav class="navbar navbar-expand-lg navbar-dark  d-flex justify-content-center container  flex justify-between mx-auto text-center row">
+            <a href="{{ url('/home') }}" class=" font-semibold text-gray-100 no-underline hover:text-orange-500  nav-item col-md-12 col-lg-2 d-flex justify-content-center  p-0">
+                <img src="{{ asset('Logo.png') }}" style="width:100px;height:100px;">
+            </a>
+            <button class="navbar-toggler col-2 " type="button" data-toggle="collapse" data-target="#opciones">
+                <span class="navbar-toggler-icon "></span>
+            </button>
 
 
-                <div class="collapse navbar-collapse col-lg-12" id="opciones">
-                    <div class="container-fluid d-flex justify-content-between  row mx-1 text-center">
+            <div class="collapse navbar-collapse col-lg-12" id="opciones">
+                <div class="container-fluid d-flex justify-content-between  row mx-1 text-center">
 
-                        @auth
+                    @auth
 
-                        <a href="{{url('juegos')}}" class="text-xl font-semibold text-gray-100 no-underline  nav-item d-lg-flex align-items-center col-lg-2 col-md-3 col-sm-12 p-5">
-                            {{__('Juegos') }}
-                        </a>
+                    <a href="{{url('juegos')}}" class="text-xl font-semibold text-gray-100 no-underline  nav-item d-lg-flex align-items-center col-lg-2 col-md-3 col-sm-12 p-5">
+                        {{__('Juegos') }}
+                    </a>
 
-                        @if (Auth::user()->can('userPremium'))
-                        <a href="{{url('misCriticas')}}" class="text-xl font-semibold text-gray-100 no-underline   nav-item d-lg-flex align-items-center col-lg-3 col-md-4 col-sm-12 p-5">
-                            {{__('Mis Criticas') }}
-                        </a>
-                        @endif
+                    @if (Auth::user()->can('userPremium'))
+                    <a href="{{url('misCriticas')}}" class="text-xl font-semibold text-gray-100 no-underline   nav-item d-lg-flex align-items-center col-lg-3 col-md-4 col-sm-12 p-5">
+                        {{__('Mis Criticas') }}
+                    </a>
+                    @endif
 
-                        <a href="{{url('contacta')}}" class="text-xl font-semibold text-gray-100 no-underline   nav-item d-lg-flex align-items-center col-lg-2 col-md-3 col-sm-12 p-5">
-                            {{__('Contacta') }}
-                        </a>
+                    <a href="{{url('contacta')}}" class="text-xl font-semibold text-gray-100 no-underline   nav-item d-lg-flex align-items-center col-lg-2 col-md-3 col-sm-12 p-5">
+                        {{__('Contacta') }}
+                    </a>
 
-                        @if (Auth::user()->can('userPaypal'))
-                        <a href="{{url('premium')}}" class="text-xl font-semibold text-gray-100 no-underline  nav-item d-lg-flex align-items-center col-lg-4 col-md-3 col-sm-12 p-5">
-                            {{__('Hazte Premium!') }}
-                        </a>
-                        @endif
+                    @if (Auth::user()->can('userPaypal'))
+                    <a href="{{url('premium')}}" class="text-xl font-semibold text-gray-100 no-underline  nav-item d-lg-flex align-items-center col-lg-4 col-md-3 col-sm-12 p-5">
+                        {{__('Hazte Premium!') }}
+                    </a>
+                    @endif
 
-                        @endauth
+                    @endauth
 
-                    </div>
-                    <div class="space-x-2 text-gray-300 text-sm sm:text-base nav-item col-lg-3 ">
-                        @guest
-                        <a class="no-underline hover:underline  text-white " href="{{ route('login') }}">{{ __('Inicia Sesion') }}</a>
-                        @if (Route::has('register'))
-                        <a class="no-underline hover:underline  text-white " href="{{ route('register') }}">{{ __('Registrate') }}</a>
-                        @endif
-                        @else
-                        <span>{{ Auth::user()->name }}</span>
-
-                        <a href="{{ route('logout') }}" class="no-underline hover:underline text-white " onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Desconectate') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                            {{ csrf_field() }}
-                        </form>
-                        @endguest
-
-                    </div>
                 </div>
-            </nav>
+                <div class="space-x-2 text-gray-300 text-sm sm:text-base nav-item col-lg-3 ">
+                    @guest
+                    <a class="no-underline hover:underline  text-white " href="{{ route('login') }}">{{ __('Inicia Sesion') }}</a>
+                    @if (Route::has('register'))
+                    <a class="no-underline hover:underline  text-white " href="{{ route('register') }}">{{ __('Registrate') }}</a>
+                    @endif
+                    @else
+                    <span>{{ Auth::user()->name }}</span>
 
-        </header>
+                    <a href="{{ route('logout') }}" class="no-underline hover:underline text-white " onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Desconectate') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        {{ csrf_field() }}
+                    </form>
+                    @endguest
+
+                </div>
+            </div>
+        </nav>
+
+    </header>
 
 
 
@@ -115,4 +115,3 @@
 </body>
 
 </html>
-

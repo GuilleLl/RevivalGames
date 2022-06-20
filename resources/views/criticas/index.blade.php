@@ -2,7 +2,7 @@
 
 @section("content")
 <div class="flex justify-center flex-wrap">
-    <div class="text-center">
+    <div class="text-center pt-2">
         <h1>{{ __("Mis Criticas") }}</h1>
     </div>
 </div>
@@ -13,7 +13,7 @@
 
 
 
-        <tbody class="">
+        <tbody>
             <div class="row d-flex justify-content-center">
                 @if($notfound)
                 <tr>

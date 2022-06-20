@@ -5,7 +5,7 @@
 
     <div class="flex">
         <div class="w-full mb-5 pb-5">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg ">
+            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg sombra">
             <header class="font-semibold bg-warning text-dark py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">{{ $title }} </header>
                 <form enctype="multipart/form-data" class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8 bg-dark " method="POST" action="{{ $route }}">
                     @csrf

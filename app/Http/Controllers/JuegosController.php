@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 
 class JuegosController extends Controller
 {
-    public function mostrarJuegos()
+    public function mostrarJuegos(Request $request)
     {
-        $juegos = Juegos::paginate(9);
-        return view("juegos.index", compact("juegos"));
+        $genero = $request->get('buscarpor');
+
+        $juegos = Juegos::where('Genero','like',"%$genero%")->paginate(6);
+        
+        return view('juegos.index', compact('juegos'));
     }
 
     public function mostrarJuego($id)
